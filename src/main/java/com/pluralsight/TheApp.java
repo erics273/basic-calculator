@@ -34,16 +34,40 @@ public class TheApp {
                    (S)ubtract
                    (M)ultiply
                    (D)ivide
-                Please select an option: """);
+                Please select an option:  """);
 
         //store the answer for the calculation you may want to do
         String calculationChoice = theScanner.nextLine();
+        String operator = "";
+        double result = 0;
 
-        //calculate the result (multiply everytime for now)
-        double result = number1 * number2;
+        if(calculationChoice.equalsIgnoreCase("A") ){
+            //do the stuff for A
+            System.out.println("made it to A");
+            operator = "+";
+            result = number1 + number2;
+        } else if (calculationChoice.equalsIgnoreCase("S")) {
+            //do the stuff for S
+            System.out.println("made it to S");
+            operator = "-";
+            result = number1 - number2;
+        } else if (calculationChoice.equalsIgnoreCase("M")) {
+            // do the stuff for M
+            System.out.println("made it to M");
+            operator = "*";
+            result = number1 * number2;
+        } else if (calculationChoice.equalsIgnoreCase("D")) {
+            //do the stuff for d
+            System.out.println("made it to D");
+            operator = "/";
+            result = number1 / number2;
+        }else{
+            System.out.println("you didnt give me an option i recognize");
+            System.exit(1);
+        }
 
         //display this to the user
-        System.out.println(number1 + " * " + number2 + " = " + result);
+        System.out.println(number1 + " " + operator + " " + number2 + " = " + result);
 
 
     }
